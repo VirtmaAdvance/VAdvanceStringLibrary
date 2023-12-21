@@ -18,7 +18,7 @@ namespace VAdvanceStringLibrary
 		/// </summary>
 		/// <param name="value"></param>
 		/// <returns></returns>
-		public static string? GetExtension(this string value) => value.HasExtension() ? Path.GetExtension(value) : null;
+		public static string? GetExtension(this string value) => value.HasExtension() ? Path.GetExtension(value).ToLower() : null;
 		/// <summary>
 		/// Gets the file name (without it's extension).
 		/// </summary>

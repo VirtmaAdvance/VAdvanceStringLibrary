@@ -7,66 +7,49 @@ using VAdvanceStringLibrary.FileSystemIO;
 
 namespace VAdvanceStringLibrary
 {
+	/// <summary>
+	/// Provides file size information extension methods for the string class.
+	/// </summary>
 	public static class StringPathFileSizeExt
 	{
 
 		private static SemaphoreSlim semaphore=new(Environment.ProcessorCount);
-
-		/// <summary>
-		/// Gets the file size.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		/// <exception cref="FileNotFoundException"></exception>
-		public static long GetFileSize(this string path) => path.IsFile() ? new FileInfo(path).Length : throw new FileNotFoundException("The given path does not reference an existing or reachable file.", path);
 		/// <summary>
 		/// Gets the file size data.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public static DataValue GetFileData(this string path) => new (path.GetFileSize());
-		/// <inheritdoc cref="Path.GetExtension(string?)"/>
-		public static string? GetExtension(this string path) => path.HasExtension() ? path.GetExtension()?.ToLower() : null;
 		/// <summary>
 		/// Gets the file size as a simplified string.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public static string GetFileSizeString(this string path) => path.GetFileData().ToString();
+		/// <summary>
+		/// Gets all of the directories within a given directory.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public static async Task<string[]> GetAllDirectories(string path) => await new FileSystemIteration().GetAllDirectories(path);
+		/// <summary>
+		/// Gets all of the files within a given directory.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public static async Task<string[]> GetAllFiles(string path) => await new FileSystemIteration().GetAllFiles(path);
 
-		//public static PathItem[] ScanDirectory(this string path)
-		//{
-		//	if(path.IsDir())
-		//	{
-		//		var tmp=Directory.GetFiles(path);
-		//		var dirs=Directory.GetDirectories(path);
-
-		//		PathItem[] res=tmp.Iterate(q=>new PathItem(q));
-		//	}
-		//}
-
-		public static async Task AsyncGetFiles(this string path, Action<string[]> callback)
-		{
-			if(path.IsDir())
-			{
-				string[] dirs=Directory.GetDirectories(path);
-				string[] res=Directory.GetFiles(path);
-				List<Task> taskList=new();
-				await Task.Delay(1);
-				foreach(string sel in dirs)
-				{
-					//await semaphore.WaitAsync();
-					Task task=Task.Run(async ()=>
-					{
-						await AsyncGetFiles(sel, callback);
-						//semaphore.Release();
-					});
-					taskList.Add(task);
-				}
-				callback(res);
-				await Task.WhenAll(taskList);
-			}
-		}
+		/// <summary>
+		/// Gets all of the sub-directories within the given <paramref name="path"/>.
+		/// </summary>
+		/// <param name="path">A <see cref="string"/> representation of an existing file system path.</param>
+		/// <returns>a <see cref="string"/> array of the items found.</returns>
+		public static string[] GetDirectories(this string path) => path.HasAccess() && path.IsDirectory() ? Directory.GetDirectories(path) : Directory.GetDirectories(Path.GetDirectoryName(Path.GetFullPath(path))!);
+		/// <inheritdoc cref="GetDirectories(string)"/>
+		/// <summary>
+		/// Gets all of the files within the given <paramref name="path"/>.
+		/// </summary>
+		public static string[] GetFiles(this string path) => path.HasAccess() && path.IsDirectory() ? Directory.GetFiles(path) : Directory.GetDirectories(Path.GetDirectoryName(Path.GetFullPath(path))!);
 
 	}
 }
