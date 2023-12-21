@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>VString</Title>
+    <Authors>Daniel K. Valente</Authors>
+    <Company>VAdvance</Company>
+    <Description>Provides a class library for the VString class and string extension methods.</Description>
+    <Copyright>apache-2.0</Copyright>
+    <PackageTags>vstring;string;extension</PackageTags>
+    <PackAsTool>True</PackAsTool>
+    <PackageLicenseExpression>apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+</Project>
