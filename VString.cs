@@ -7,7 +7,7 @@ namespace VAdvanceStringLibrary
 	/// <summary>
 	/// A derivable <see cref="string"/> equivalent class.
 	/// </summary>
-	public class VString : IEquatable<VString>, IComparable<VString>, IDisposable, IEnumerable<char>, IFormattable, IConvertible
+	public class VString:IEquatable<VString>, IComparable<VString>, IDisposable, IEnumerable<char>, IFormattable, IConvertible
 	{
 
 		private string? _value;
@@ -108,9 +108,9 @@ namespace VAdvanceStringLibrary
 		/// <inheritdoc cref="VString(string)"/>
 		public VString(params char[] value) => Value=value.GetString();
 		/// <inheritdoc cref="VString(string)"/>
-		public static explicit operator VString(string value) => new (value);
+		public static explicit operator VString(string value) => new(value);
 		/// <inheritdoc cref="VString(string)"/>
-		public static explicit operator VString(char value) => new (value);
+		public static explicit operator VString(char value) => new(value);
 		/// <summary>
 		/// Determines if the <see cref="Value"/> contains the <paramref name="substringValue"/>.
 		/// </summary>
@@ -153,7 +153,7 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public bool Equals(VString? other)
 		{
-			return (other is null && this is null) || ((other is not null && this is not null) && other.Value==Value);
+			return (other is null && this is null) || (other is not null && this is not null && other.Value==Value);
 		}
 		/// <summary>
 		/// Compares this value with another.
@@ -162,8 +162,7 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public int CompareTo(VString? other)
 		{
-			if(other is null)
-				other=new VString("");
+			other??=new VString("");
 			return Value.CompareTo(other.Value);
 		}
 		/// <summary>
@@ -215,12 +214,7 @@ namespace VAdvanceStringLibrary
 				return true;
 			}
 
-			if(ReferenceEquals(obj, null))
-			{
-				return false;
-			}
-
-			throw new NotImplementedException();
+			return obj is null ? false : throw new NotImplementedException();
 		}
 		/// <summary>
 		/// Gets the hash code of this object.
@@ -345,7 +339,7 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public static bool operator ==(VString left, VString right)
 		{
-			return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.Equals(right);
+			return left is null ? right is null : left.Equals(right);
 		}
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator !=(VString left, VString right)
@@ -355,22 +349,22 @@ namespace VAdvanceStringLibrary
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator <(VString left, VString right)
 		{
-			return ReferenceEquals(left, null) ? !ReferenceEquals(right, null) : left.CompareTo(right)<0;
+			return left is null ? right is not null : left.CompareTo(right)<0;
 		}
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator <=(VString left, VString right)
 		{
-			return ReferenceEquals(left, null)||left.CompareTo(right)<=0;
+			return left is null||left.CompareTo(right)<=0;
 		}
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator >(VString left, VString right)
 		{
-			return !ReferenceEquals(left, null)&&left.CompareTo(right)>0;
+			return left is not null&&left.CompareTo(right)>0;
 		}
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator >=(VString left, VString right)
 		{
-			return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.CompareTo(right)>=0;
+			return left is null ? right is null : left.CompareTo(right)>=0;
 		}
 	}
 }
