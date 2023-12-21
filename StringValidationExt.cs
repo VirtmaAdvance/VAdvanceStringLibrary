@@ -12,6 +12,13 @@
 		/// <returns></returns>
 		public static bool IsValid(this string value) => !IsNullOrEmpty(value) &&NotNullOrEmpty(value.TrimEnds());
 		/// <summary>
+		/// Determines if the <paramref name="value"/> is an empty string.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <returns></returns>
+		public static bool IsEmpty(this string value) => value is null ? throw new ArgumentNullException("The value cannot be null.") : string.IsNullOrEmpty(value);
+		/// <summary>
 		/// Determines if the <paramref name="value"/> is null nor empty.
 		/// </summary>
 		/// <param name="value"></param>
