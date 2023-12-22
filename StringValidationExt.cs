@@ -17,7 +17,9 @@
 		/// <param name="value"></param>
 		/// <exception cref="ArgumentNullException"></exception>
 		/// <returns></returns>
-		public static bool IsEmpty(this string value) => value is null ? throw new ArgumentNullException("The value cannot be null.") : string.IsNullOrEmpty(value);
+		public static bool IsEmpty(this string value) => string.IsNullOrEmpty(value);
+
+		public static bool NotEmpty(this string value) => !IsEmpty(value);
 		/// <summary>
 		/// Determines if the <paramref name="value"/> is null nor empty.
 		/// </summary>
