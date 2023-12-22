@@ -13,12 +13,13 @@
 		/// <param name="values">The values/items to add to the array.</param>
 		public static TIn[] Push<TIn>(this TIn[] source, params TIn[] values)
 		{
-			source??=Array.Empty<TIn>();
-			values??=Array.Empty<TIn>();
+			source=source.Get();
+			values=values.Get();
 			TIn[] res=source;
-			Array.Resize(ref res, source.Length+values.Length);
-			Array.Copy(values, 0, res, source.Length, values.Length);
-			return res;
+			return Prv_PushCopy(res, values);
+			//Array.Resize(ref res, source.Length+values.Length);
+			//Array.Copy(values, 0, res, source.Length, values.Length);
+			//return res;
 			//if(source!=null)
 			//{
 			//	Array.Resize(ref res, source.Length);
@@ -33,6 +34,15 @@
 			//		res[i+index]=values[i];
 			//}
 			//return res;
+		}
+
+		private static TIn[] Prv_PushCopy<TIn>(TIn[] res, TIn[] values)
+		{
+			int sourceLength=res.Length;
+			int len=sourceLength+values.Length;
+			Array.Resize(ref res, len);
+			Array.Copy(values, 0, res, sourceLength, values.Length);
+			return res;
 		}
 
 	}

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VAdvanceStringLibrary.FileSystemIO
+﻿namespace VAdvanceStringLibrary.FileSystemIO
 {
 	/// <summary>
 	/// Stores a data value.
 	/// </summary>
-	public struct DataValue
+	public readonly struct DataValue
 	{
 
 		/// <summary>

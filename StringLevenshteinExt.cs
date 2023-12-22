@@ -19,18 +19,27 @@ namespace VAdvanceStringLibrary
 		/// <returns>a <see cref="int">value</see> representing the total cost calculated.</returns>
 		public static int Levenshtein(this string str, string value, int insertion_cost = 1, int replacement_cost = 1, int deletion_cost = 1)
 		{
-			if(value.IsValid() && str.IsValid())
+			if(value.IsValid(str))
 			{
 				int res=str[0]!=value[0] ? 1 : 0;
-				int char_length=Math.Min(str.Length,value.Length);
-				int[] character_indexes=GetCharacterIndexes(str,value,char_length);
-				foreach(int i in character_indexes)
-					if(i>0 && i<char_length && value[i]!=str[i])
-						res+=value[i-1]==str[i-1] && value[i+1]==str[i+1] ? replacement_cost : value[i-1]==str[i-1] && value[i]==str[i+1] ? insertion_cost : deletion_cost;
+				res=Prv_LevenshteinIteration(str, value, replacement_cost, insertion_cost, deletion_cost, res);
 				return res+(deletion_cost*GetValueLengthDifference(str, value));
 			}
 			return -1;
 		}
+
+		private static int Prv_LevenshteinIteration(string str, string value, int replacement_cost, int insertion_cost, int deletion_cost, int res)
+		{
+
+			int char_length=Math.Min(str.Length,value.Length);
+			int[] character_indexes=GetCharacterIndexes(str,value,char_length);
+			foreach(int i in character_indexes)
+				if(i>0 && i<char_length && value[i]!=str[i])
+					res=Prv_LevenshteinOp(str, value, i, replacement_cost, insertion_cost, deletion_cost);
+			return res;
+		}
+
+		private static int Prv_LevenshteinOp(string str, string value, int i, int replacement_cost, int insertion_cost, int deletion_cost) => value[i-1]==str[i-1] && value[i+1]==str[i+1] ? replacement_cost : value[i-1]==str[i-1] && value[i]==str[i+1] ? insertion_cost : deletion_cost;
 		/// <summary>
 		/// Gets the length different between two string values.
 		/// </summary>

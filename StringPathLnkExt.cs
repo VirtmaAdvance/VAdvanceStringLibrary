@@ -7,7 +7,6 @@ namespace VAdvanceStringLibrary
 	/// </summary>
 	public static class StringPathLnkExt
 	{
-
 		/// <summary>
 		/// Gets the target path of the <paramref name="lnkPath"/>.
 		/// </summary>
@@ -15,21 +14,15 @@ namespace VAdvanceStringLibrary
 		/// <returns>the target path from the <paramref name="lnkPath"/> upon success, null otherwise.</returns>
 		public static string? GetPathFromLnk(this string lnkPath)
 		{
-			if(lnkPath.IsFile())
+			if(lnkPath.IsFile() && lnkPath.GetExtension()=="lnk")
 			{
-				if(lnkPath.GetExtension()=="lnk")
-				{
-					WshShell shell = new ();
-					IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(lnkPath);
-					string path=shortcut.TargetPath;
-					if(!path.IsFile())
-						if(path.Contains("Program Files (x86)"))
-							path=path.Replace("Program Files (x86)", "Program Files");
-					return path;
-				}
+				string path=GetShortcut(lnkPath).TargetPath;
+				return (!path.IsFile()) && path.Contains("Program Files (x86)") ? path.Replace("Program Files (x86)", "Program Files") : path;
 			}
 			return null;
 		}
+
+		private static IWshShortcut GetShortcut(string path) => (IWshShortcut)(new WshShell()).CreateShortcut(path);
 
 	}
 }

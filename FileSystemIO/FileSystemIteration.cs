@@ -8,10 +8,9 @@ namespace VAdvanceStringLibrary.FileSystemIO
 	public class FileSystemIteration
 	{
 
-		private static SemaphoreSlim s_semaphore=new SemaphoreSlim(Environment.ProcessorCount);
+		private static readonly SemaphoreSlim s_semaphore=new (Environment.ProcessorCount);
 
-		private string[] _buffer;
-
+		private string[]? _buffer;
 
 
 		/// <summary>
@@ -22,7 +21,7 @@ namespace VAdvanceStringLibrary.FileSystemIO
 		public async Task<string[]> GetAllDirectories(string path)
 		{
 			var res=await Prv_GetAllDirectories(path);
-			Array.Clear(_buffer);
+			_buffer=null;
 			return res;
 		}
 
@@ -47,7 +46,6 @@ namespace VAdvanceStringLibrary.FileSystemIO
 			res=res.Merge(_buffer);
 			return res;
 		}
-
 		/// <summary>
 		/// Gets all files recursively.
 		/// </summary>
@@ -56,7 +54,7 @@ namespace VAdvanceStringLibrary.FileSystemIO
 		public async Task<string[]> GetAllFiles(string path)
 		{
 			var res=await Prv_GetAllFiles(path);
-			Array.Clear(_buffer);
+			_buffer=null;
 			return res;
 		}
 

@@ -14,7 +14,7 @@
 		/// <returns>the percentage of similarity between the two string values.</returns>
 		public static double SimilarText(this string source, string value, int percent = -1)
 		{
-			if(source.IsValid() && value.IsValid())
+			if(source.IsValid(value))
 			{
 				int pos1=-1, pos2=-1, max=0, l;
 				for(int p = 0;p<source.Length;++p)

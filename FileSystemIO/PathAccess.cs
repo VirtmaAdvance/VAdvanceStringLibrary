@@ -1,6 +1,4 @@
-﻿using VAdvanceStringLibrary.Systems;
-
-namespace VAdvanceStringLibrary.FileSystemIO
+﻿namespace VAdvanceStringLibrary.FileSystemIO
 {
 	/// <summary>
 	/// Manages path security access.
@@ -30,13 +28,10 @@ namespace VAdvanceStringLibrary.FileSystemIO
 		/// </summary>
 		public PathAccess()
 		{
-			if(VOS.OS==OperatingSystemFlags.Windows)
-			{
 #if WINDOWS
-				_currentUser=WindowsIdentity.GetCurrent();
-				_currentPrincipal=new(_currentUser);
+			_currentUser=WindowsIdentity.GetCurrent();
+			_currentPrincipal=new(_currentUser);
 #endif
-			}
 		}
 		/// <summary>
 		/// Determines if the <paramref name="path"/> can be accessed.
