@@ -9,10 +9,10 @@
     <Authors>Daniel K. Valente</Authors>
     <Company>VAdvance</Company>
     <Description>Provides a class library for the VString class and string extension methods.</Description>
-    <Copyright>apache-2.0</Copyright>
+    <Copyright>0BSD</Copyright>
     <PackageTags>vstring;string;extension</PackageTags>
     <PackAsTool>True</PackAsTool>
-    <PackageLicenseExpression>apache-2.0</PackageLicenseExpression>
+    <PackageLicenseExpression>0BSD</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
