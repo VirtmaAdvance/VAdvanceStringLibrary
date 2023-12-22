@@ -209,12 +209,7 @@ namespace VAdvanceStringLibrary
 		{
 			if(obj is null && this is null)
 				return true;
-			if(ReferenceEquals(this, obj))
-			{
-				return true;
-			}
-
-			return obj is null ? false : throw new NotImplementedException();
+			return ReferenceEquals(this, obj) ||(obj is null ? false : throw new NotImplementedException());
 		}
 		/// <summary>
 		/// Gets the hash code of this object.
