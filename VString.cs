@@ -151,10 +151,7 @@ namespace VAdvanceStringLibrary
 		/// </summary>
 		/// <param name="other"></param>
 		/// <returns></returns>
-		public bool Equals(VString? other)
-		{
-			return (other is null && this is null) || (other is not null && this is not null && other.Value==Value);
-		}
+		public bool Equals(VString? other) => (other is null && this is null) || (other is not null && this is not null && other.Value==Value);
 		/// <summary>
 		/// Compares this value with another.
 		/// </summary>
@@ -176,15 +173,9 @@ namespace VAdvanceStringLibrary
 		/// Gets the enumerator.
 		/// </summary>
 		/// <returns></returns>
-		public IEnumerator<char> GetEnumerator()
-		{
-			return Value.GetEnumerator();
-		}
+		public IEnumerator<char> GetEnumerator() => Value.GetEnumerator();
 
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return Value.GetEnumerator();
-		}
+		IEnumerator IEnumerable.GetEnumerator() => Value.GetEnumerator();
 		/// <summary>
 		/// Appends the second value to the first.
 		/// </summary>
@@ -215,151 +206,73 @@ namespace VAdvanceStringLibrary
 		/// Gets the hash code of this object.
 		/// </summary>
 		/// <returns></returns>
-		public override int GetHashCode()
-		{
-			return Value.GetHashCode();
-		}
+		public override int GetHashCode() => Value.GetHashCode();
 		/// <summary>
 		/// Gets the <see cref="string"/> representation of the stored value.
 		/// </summary>
 		/// <param name="format"></param>
 		/// <param name="formatProvider"></param>
 		/// <returns></returns>
-		public string ToString(string? format, IFormatProvider? formatProvider)
-		{
-			return Value.ToString(formatProvider);
-		}
+		public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(formatProvider);
 		/// <summary>
 		/// Gets the <see cref="TypeCode"/> of the value.
 		/// </summary>
 		/// <returns></returns>
-		public TypeCode GetTypeCode()
-		{
-			return Value.GetTypeCode();
-		}
+		public TypeCode GetTypeCode() => Value.GetTypeCode();
 		/// <summary>
 		/// Converts this object to a another data type.
 		/// </summary>
 		/// <param name="provider"></param>
 		/// <returns></returns>
-		public bool ToBoolean(IFormatProvider? provider)
-		{
-			return Length>0;
-		}
+		public bool ToBoolean(IFormatProvider? provider) => Length>0;
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public byte ToByte(IFormatProvider? provider)
-		{
-			return Convert.ToByte(Value);
-		}
+		public byte ToByte(IFormatProvider? provider) => Convert.ToByte(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public char? ToChar(IFormatProvider? provider)
-		{
-			return Length>0 ? Value[0] : null;
-		}
+		public char? ToChar(IFormatProvider? provider) => Length>0 ? Value[0] : null;
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public DateTime ToDateTime(IFormatProvider? provider)
-		{
-			return DateTime.Parse(Value, provider);
-		}
+		public DateTime ToDateTime(IFormatProvider? provider) => DateTime.Parse(Value, provider);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public decimal ToDecimal(IFormatProvider? provider)
-		{
-			return Convert.ToDecimal(Value);
-		}
+		public decimal ToDecimal(IFormatProvider? provider) => Convert.ToDecimal(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public double ToDouble(IFormatProvider? provider)
-		{
-			return Convert.ToDouble(Value);
-		}
+		public double ToDouble(IFormatProvider? provider) => Convert.ToDouble(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public short ToInt16(IFormatProvider? provider)
-		{
-			return Convert.ToInt16(Value);
-		}
+		public short ToInt16(IFormatProvider? provider) => Convert.ToInt16(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public int ToInt32(IFormatProvider? provider)
-		{
-			return Convert.ToInt32(Value);
-		}
+		public int ToInt32(IFormatProvider? provider) => Convert.ToInt32(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public long ToInt64(IFormatProvider? provider)
-		{
-			return Convert.ToInt64(Value);
-		}
+		public long ToInt64(IFormatProvider? provider) => Convert.ToInt64(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public sbyte ToSByte(IFormatProvider? provider)
-		{
-			return Convert.ToSByte(Value);
-		}
+		public sbyte ToSByte(IFormatProvider? provider) => Convert.ToSByte(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public float ToSingle(IFormatProvider? provider)
-		{
-			return Convert.ToSingle(Value);
-		}
+		public float ToSingle(IFormatProvider? provider) => Convert.ToSingle(Value);
 		/// <inheritdoc cref="ToString()"/>
-		public string ToString(IFormatProvider? provider)
-		{
-			return Convert.ToString(Value, provider);
-		}/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-
-		public object ToType(Type conversionType, IFormatProvider? provider)
-		{
-			return Convert.ChangeType(Value, conversionType, provider);
-		}
+		public string ToString(IFormatProvider? provider) => Convert.ToString(Value, provider);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public ushort ToUInt16(IFormatProvider? provider)
-		{
-			return Convert.ToUInt16(Value);
-		}
+		public object ToType(Type conversionType, IFormatProvider? provider) => Convert.ChangeType(Value, conversionType, provider);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public uint ToUInt32(IFormatProvider? provider)
-		{
-			return Convert.ToUInt32(Value);
-		}
+		public ushort ToUInt16(IFormatProvider? provider) => Convert.ToUInt16(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		public ulong ToUInt64(IFormatProvider? provider)
-		{
-			return Convert.ToUInt64(Value);
-		}
+		public uint ToUInt32(IFormatProvider? provider) => Convert.ToUInt32(Value);
 		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
-		char IConvertible.ToChar(IFormatProvider? provider)
-		{
-			return Convert.ToChar(Value);
-		}
+		public ulong ToUInt64(IFormatProvider? provider) => Convert.ToUInt64(Value);
+		/// <inheritdoc cref="ToBoolean(IFormatProvider?)"/>
+		char IConvertible.ToChar(IFormatProvider? provider) => Convert.ToChar(Value);
 		/// <summary>
 		/// Compares this value with another.
 		/// </summary>
 		/// <param name="left"></param>
 		/// <param name="right"></param>
 		/// <returns></returns>
-		public static bool operator ==(VString left, VString right)
-		{
-			return left is null ? right is null : left.Equals(right);
-		}
+		public static bool operator ==(VString left, VString right) => left is null ? right is null : left.Equals(right);
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
-		public static bool operator !=(VString left, VString right)
-		{
-			return !(left==right);
-		}
+		public static bool operator !=(VString left, VString right) => !(left==right);
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
-		public static bool operator <(VString left, VString right)
-		{
-			return left is null ? right is not null : left.CompareTo(right)<0;
-		}
+		public static bool operator <(VString left, VString right) => left is null ? right is not null : left.CompareTo(right)<0;
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
-		public static bool operator <=(VString left, VString right)
-		{
-			return left is null||left.CompareTo(right)<=0;
-		}
+		public static bool operator <=(VString left, VString right) => left is null||left.CompareTo(right)<=0;
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
-		public static bool operator >(VString left, VString right)
-		{
-			return left is not null&&left.CompareTo(right)>0;
-		}
+		public static bool operator >(VString left, VString right) => left is not null&&left.CompareTo(right)>0;
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
-		public static bool operator >=(VString left, VString right)
-		{
-			return left is null ? right is null : left.CompareTo(right)>=0;
-		}
+		public static bool operator >=(VString left, VString right) => left is null ? right is null : left.CompareTo(right)>=0;
 	}
 }
