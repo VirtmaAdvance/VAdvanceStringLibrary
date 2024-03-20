@@ -93,10 +93,7 @@ namespace VAdvanceStringLibrary
 
 
 		/// <inheritdoc cref="VString(string)"/>
-		public VString()
-		{
-			Value="";
-		}
+		public VString() : this("") { }
 		/// <summary>
 		/// Creates a new instance of the <see cref="VString"/> class.
 		/// </summary>
@@ -160,7 +157,7 @@ namespace VAdvanceStringLibrary
 		public int CompareTo(VString? other)
 		{
 			other??=new VString("");
-			return Value.CompareTo(other.Value);
+			return Value.CompareTo(other?.Value);
 		}
 		/// <summary>
 		/// Disposes this object.
