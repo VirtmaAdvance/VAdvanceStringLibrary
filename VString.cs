@@ -42,12 +42,12 @@ namespace VAdvanceStringLibrary
 					Value=value.ToString();
 				else
 				{
-					if(InRange(index))
+					if (InRange(index))
 					{
-						string beginning=Value.Substring(0, index-1);
-						int calc=index+1;
-						string ending=Value.Substring(calc, Length-calc);
-						Value=beginning+value+ending;
+						string beginning = Value.Substring(0, index - 1);
+						int calc = index + 1;
+						string ending = Value.Substring(calc, Length - calc);
+						Value = beginning + value + ending;
 					}
 					else if(index.NearestTo(0, Length)==0)
 						Value=value.ToString()+Value;
@@ -162,10 +162,7 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Disposes this object.
 		/// </summary>
-		public void Dispose()
-		{
-			Value="";
-		}
+		public void Dispose() => Value="";
 		/// <summary>
 		/// Gets the enumerator.
 		/// </summary>
@@ -193,12 +190,7 @@ namespace VAdvanceStringLibrary
 		/// <param name="obj"></param>
 		/// <returns></returns>
 		/// <exception cref="NotImplementedException"></exception>
-		public override bool Equals(object? obj)
-		{
-			if(obj is null && this is null)
-				return true;
-			return ReferenceEquals(this, obj) ||(obj is null ? false : throw new NotImplementedException());
-		}
+		public override bool Equals(object? obj) => obj is null && this is null || (ReferenceEquals(this, obj) ||(obj is null ? false : throw new NotImplementedException()));
 		/// <summary>
 		/// Gets the hash code of this object.
 		/// </summary>
