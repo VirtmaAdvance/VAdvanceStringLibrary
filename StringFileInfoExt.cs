@@ -38,47 +38,7 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		/// <exception cref="ArgumentException"></exception>
 		public static FileInfo GetFileInfo(this string value) => value.IsFile() ? new FileInfo(value) : throw new ArgumentException("The given path does not reference an existing file path.");
-		/// <summary>
-		/// Deletes a file.
-		/// </summary>
-		/// <param name="value"></param>
-		public static void DeleteFile(this string value)
-		{
-			if(value.IsFile())
-				File.Delete(value);
-		}
-		/// <inheritdoc cref="CreateFile(string, byte[])"/>
-		public static void CreateFile(this string value)
-		{
-			value.CreateFile(Array.Empty<byte>());
-		}
-		/// <inheritdoc cref="CreateFile(string, byte[])"/>
-		public static void CreateFile(this string value, string content)
-		{
-			value.CreateFile(content, Encoding.Unicode);
-		}
-		/// <inheritdoc cref="CreateFile(string, byte[])"/>
-		/// <param name="value">The file path to create.</param>
-		/// <param name="content">The content to apply.</param>
-		/// <param name="encoder">The encoding method.</param>
-		public static void CreateFile(this string value, string content, Encoding encoder)
-		{
-			value.CreateFile(encoder.GetBytes(content));
-		}
-		/// <summary>
-		/// Creates a new file.
-		/// </summary>
-		/// <param name="value">The file path to create.</param>
-		/// <param name="content">The content to apply.</param>
-		public static async void CreateFile(this string value, byte[]? content)
-		{
-			if(!value.IsFile())
-			{
-				File.Create(value);
-				if(content is not null && content.Length>0)
-					await File.WriteAllBytesAsync(value, content);
-			}
-		}
+		
 
 	}
 }
