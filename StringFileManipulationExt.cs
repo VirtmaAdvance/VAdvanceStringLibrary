@@ -128,6 +128,5 @@ namespace VAdvanceStringLibrary
 		/// <param name="attributes"></param>
 		public static void FileSetAttributes(this string path, FileAttributes attributes) => File.SetAttributes(path, attributes);
 
-
 	}
 }
