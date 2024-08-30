@@ -249,9 +249,9 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Compares this value with another.
 		/// </summary>
-		/// <param name="left"></param>
-		/// <param name="right"></param>
-		/// <returns></returns>
+		/// <param name="left">The left parameter represents tha first variable to compare.</param>
+		/// <param name="right">The second variable represents the second variable to compare to the first variable.</param>
+		/// <returns>a <see cref="bool"/> representation of the result.</returns>
 		public static bool operator ==(VString left, VString right) => left is null ? right is null : left.Equals(right);
 		/// <inheritdoc cref="operator ==(VString, VString)"/>
 		public static bool operator !=(VString left, VString right) => !(left==right);
