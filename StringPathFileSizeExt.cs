@@ -35,7 +35,6 @@ namespace VAdvanceStringLibrary
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public static async Task<string[]> GetAllFiles(string path) => await new FileSystemIteration().GetAllFiles(path);
-
 		/// <summary>
 		/// Gets all of the sub-directories within the given <paramref name="path"/>.
 		/// </summary>
