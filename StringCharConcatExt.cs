@@ -8,8 +8,8 @@
 		/// <summary>
 		/// Compresses the array of chars into a single string value.
 		/// </summary>
-		/// <param name="source"></param>
-		/// <returns></returns>
+		/// <param name="source">The array of characters to convert.</param>
+		/// <returns>the <see cref="string"/> representation of the character array conversion.</returns>
 		public static string GetString(this char[] source)
 		{
 			string res="";
