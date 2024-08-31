@@ -27,7 +27,11 @@ namespace VAdvanceStringLibrary
 			}
 			return res;
 		}
-
+		/// <summary>
+		/// Gets the replacement value for uppercase values.
+		/// </summary>
+		/// <param name="value">The <see cref="string"/> to process.</param>
+		/// <returns>the modified version of the given <paramref name="value"/>.</returns>
 		private static string GetStringReplacementUpperCase(string value) => Regex.Replace(value.Substring(1,value.Length-1),"[\\s]+","").ToUpper();
 		/// <summary>
 		/// Gets the string replacement for use by the soundex reference.
