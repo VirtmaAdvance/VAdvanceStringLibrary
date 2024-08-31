@@ -33,8 +33,8 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Gets the string replacement for use by the soundex reference.
 		/// </summary>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <param name="value">The <see cref="string"/> value to process.</param>
+		/// <returns>the modified <see cref="string"/> value.</returns>
 		private static string GetStringReplacementSoundexRef(string value)
 		{
 			string str=GetStringReplacementUpperCase(value);
