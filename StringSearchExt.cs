@@ -7,7 +7,6 @@ namespace VAdvanceStringLibrary
 	/// </summary>
 	public static class StringSearchExt
 	{
-
 		/// <summary>
 		/// Determines the number of times one of the <paramref name="needles"/> was found in the <paramref name="haystack"/>.
 		/// </summary>
