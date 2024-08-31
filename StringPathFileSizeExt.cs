@@ -7,7 +7,9 @@ namespace VAdvanceStringLibrary
 	/// </summary>
 	public static class StringPathFileSizeExt
 	{
-
+		/// <summary>
+		/// Used for multi-threading...
+		/// </summary>
 		private static SemaphoreSlim semaphore=new(Environment.ProcessorCount);
 		/// <summary>
 		/// Gets the file size data.
