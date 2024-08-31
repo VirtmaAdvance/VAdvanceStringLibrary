@@ -23,10 +23,10 @@ namespace VAdvanceStringLibrary
 		public static Match? Match(this string? input, string pattern) => input.NotNullOrEmpty() ? Regex.Match(input!, pattern) : null;
 		/// <inheritdoc cref="Regex.Matches(string?, string, RegexOptions)" path="//*[not(self::returns)]"/>
 		/// <returns>an array of <see cref="System.Text.RegularExpressions.Match"/> objects.</returns>
-		public static Match[] Matches(this string? input, string pattern, RegexOptions options) => input.NotNullOrEmpty() ? Regex.Matches(input!, pattern, options)?.ToArray()??Array.Empty<Match>() : Array.Empty<Match>();
+		public static Match[] Matches(this string? input, string pattern, RegexOptions options) => input.NotNullOrEmpty() ? Regex.Matches(input!, pattern, options)?.ToArray() ?? [] : [];
 		/// <inheritdoc cref="Regex.Matches(string?, string, RegexOptions)" path="//*[not(self::returns)]"/>
 		/// <returns>an array of <see cref="System.Text.RegularExpressions.Match"/> objects.</returns>
-		public static Match[] Matches(this string? input, string pattern) => input.NotNullOrEmpty() ? Regex.Matches(input!, pattern)?.ToArray() ?? Array.Empty<Match>() : Array.Empty<Match>();
+		public static Match[] Matches(this string? input, string pattern) => input.NotNullOrEmpty() ? Regex.Matches(input!, pattern)?.ToArray() ?? [] : [];
 
 	}
 }
