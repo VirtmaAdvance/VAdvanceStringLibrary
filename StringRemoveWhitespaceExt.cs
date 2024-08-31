@@ -14,11 +14,11 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public static string RemoveWhitespace(this string value)
 		{
-			if(value.IsValid())
+			if (value.IsValid())
 			{
-				const string pattern=@"(^[\s\n\r\t ]+$)";
-				if(Regex.IsMatch(value, pattern))
-					value=Regex.Replace(value, pattern, "");
+				const string pattern = @"(^[\s\n\r\t ]+$)";
+				if (Regex.IsMatch(value, pattern))
+					value = Regex.Replace(value, pattern, "");
 			}
 			return value;
 		}
