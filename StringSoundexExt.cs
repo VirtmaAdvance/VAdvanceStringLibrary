@@ -23,9 +23,6 @@ namespace VAdvanceStringLibrary
 				res+=value[0].ToUpper();
 				for(int i=0;res.Length<Math.Min(4, str.Length+1);i++)
 					res+=GetSoundexCodeFromCharacter(str[i]);
-				//int i=0;
-				//while(res.Length<Math.Min(4, str.Length+1))
-				//	res+=GetSoundexCodeFromCharacter(str[i++]);
 				while(res.Length<4)
 					res+='0';
 			}
