@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace VAdvanceStringLibrary
+﻿namespace VAdvanceStringLibrary
 {
 	/// <summary>
 	/// Provides length extension methods for the string class.
