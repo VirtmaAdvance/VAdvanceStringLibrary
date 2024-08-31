@@ -10,8 +10,8 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Removes all whitespace characters from the <paramref name="value"/>.
 		/// </summary>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <param name="value">The <see cref="string"/> value to process.</param>
+		/// <returns>the <see cref="string"/> representation of the modification performed.</returns>
 		public static string RemoveWhitespace(this string value)
 		{
 			if (value.IsValid())
