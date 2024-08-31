@@ -10,7 +10,7 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Used for multi-threading...
 		/// </summary>
-		private static SemaphoreSlim semaphore=new(Environment.ProcessorCount);
+		private static SemaphoreSlim s_semaphore=new(Environment.ProcessorCount);
 		/// <summary>
 		/// Gets the file size data.
 		/// </summary>
