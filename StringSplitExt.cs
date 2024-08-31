@@ -5,7 +5,6 @@
 	/// </summary>
 	public static class StringSplitExt
 	{
-
 		/// <summary>
 		/// Gets a <see cref="string"/> array that contains the sub-string values within the source string value, or the source string value within the array.
 		/// </summary>
