@@ -8,7 +8,6 @@ namespace VAdvanceStringLibrary
 	/// </summary>
 	public static class StringSoundexExt
 	{
-
 		/// <summary>
 		/// Calculates the soundex from the string value.
 		/// </summary>
