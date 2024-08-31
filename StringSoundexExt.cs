@@ -30,13 +30,16 @@ namespace VAdvanceStringLibrary
 		}
 
 		private static string GetStringReplacementUpperCase(string value) => Regex.Replace(value.Substring(1,value.Length-1),"[\\s]+","").ToUpper();
-
+		/// <summary>
+		/// Gets the string replacement for use by the soundex reference.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
 		private static string GetStringReplacementSoundexRef(string value)
 		{
 			string str=GetStringReplacementUpperCase(value);
 			return Regex.Replace(Regex.IsMatch(str, SoundexReferenceData.IgnoredRegex) ? Regex.Replace(str, SoundexReferenceData.IgnoredRegex, "") : str, "(.)\\1{1,}", "$1");
 		}
-
 		/// <summary>
 		/// Gets the soundex code from the given character value.
 		/// </summary>
