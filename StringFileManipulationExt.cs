@@ -12,7 +12,7 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Deletes a file.
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name="value">The <see cref="string"/> representation of the file path to delete.</param>
 		public static void DeleteFile(this string value)
 		{
 			if(value.IsFile())

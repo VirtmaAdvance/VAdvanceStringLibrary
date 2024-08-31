@@ -9,7 +9,7 @@
 		/// Gets the length of the <paramref name="value"/>.
 		/// </summary>
 		/// <param name="value">A <see cref="string"/> value.</param>
-		/// <returns></returns>
+		/// <returns>the length of the <see cref="string"/> value.</returns>
 		public static int Count(this string value) => value?.Length??0;
 
 	}
