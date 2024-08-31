@@ -11,9 +11,9 @@ namespace VAdvanceStringLibrary
 		/// <summary>
 		/// Determines the number of times one of the <paramref name="needles"/> was found in the <paramref name="haystack"/>.
 		/// </summary>
-		/// <param name="haystack"></param>
-		/// <param name="needles"></param>
-		/// <returns></returns>
+		/// <param name="haystack">The <see cref="string"/> value to search through.</param>
+		/// <param name="needles">The <see cref="string"/>s to look for within the <paramref name="haystack"/>.</param>
+		/// <returns>an <see cref="int"/> value representing the number of <paramref name="needles"/> found.</returns>
 		public static int Count(this string haystack, params string[] needles)
 		{
 			int res=0;
