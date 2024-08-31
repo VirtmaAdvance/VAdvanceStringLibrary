@@ -8,8 +8,8 @@
 		/// <summary>
 		/// Reverses the <paramref name="value"/>.
 		/// </summary>
-		/// <param name="value"></param>
-		/// <returns></returns>
+		/// <param name="value">The <see cref="string"/> value to modify.</param>
+		/// <returns>the modified <see cref="string"/> value.</returns>
 		public static string Reverse(this string value)
 		{
 			if(value.IsValid())
