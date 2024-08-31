@@ -18,7 +18,6 @@
 			{
 				int pos1=-1, pos2=-1, max=0, l;
 				for(int p = 0;p<source.Length;++p)
-				{
 					for(int q = 0;q<value.Length;++q)
 					{
 						for(l=0;(p+l<source.Length) && (q+l<value.Length) && source.Substring(p+l, 1)==value.Substring(q+l, 1);++l) { }
@@ -29,7 +28,6 @@
 							pos2=q;
 						}
 					}
-				}
 				double similarity=max;
 				if(pos1>-1&&pos2>-1)
 					similarity+=source.Substring(0, pos1).SimilarText(value.Substring(0, pos2), percent);
