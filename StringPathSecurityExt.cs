@@ -7,10 +7,10 @@ namespace VAdvanceStringLibrary
 	/// </summary>
 	public static class StringPathSecurityExt
 	{
-
+		/// <summary>
+		/// Used to store path access information.
+		/// </summary>
 		private static readonly PathAccess s_pathAccess = new ();
-
-
 		/// <summary>
 		/// Determines if the <paramref name="path"/> is accessible/readable.
 		/// </summary>
