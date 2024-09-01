@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace VAdvanceStringLibrary
+﻿namespace VAdvanceStringLibrary
 {
 	/// <summary>
 	/// Provides file information extension methods for the string class.
