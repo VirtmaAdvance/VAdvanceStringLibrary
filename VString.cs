@@ -7,7 +7,7 @@ namespace VAdvanceStringLibrary
 	/// <summary>
 	/// A derivable <see cref="string"/> equivalent class.
 	/// </summary>
-	public class VString:IEquatable<VString>, IComparable<VString>, IDisposable, IEnumerable<char>, IFormattable, IConvertible
+	public class VString : IEquatable<VString>, IComparable<VString>, IDisposable, IEnumerable<char>, IFormattable, IConvertible
 	{
 
 		private string? _value;
