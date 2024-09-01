@@ -27,7 +27,16 @@ namespace VAdvanceStringLibrary
 			}
 			return -1;
 		}
-
+		/// <summary>
+		/// Performs an iteration for the Levenshtein operation.
+		/// </summary>
+		/// <param name="str">The <see cref="string"/> value to process.</param>
+		/// <param name="value">The value to process.</param>
+		/// <param name="replacement_cost">The cost value for replacement.</param>
+		/// <param name="insertion_cost">The insertion cost.</param>
+		/// <param name="deletion_cost">The deletion cost.</param>
+		/// <param name="res">The result.</param>
+		/// <returns>the costs made for each change detected as an <see cref="int"/>.</returns>
 		private static int Prv_LevenshteinIteration(string str, string value, int replacement_cost, int insertion_cost, int deletion_cost, int res)
 		{
 
