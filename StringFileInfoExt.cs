@@ -39,6 +39,5 @@ namespace VAdvanceStringLibrary
 		/// <exception cref="ArgumentException"></exception>
 		public static FileInfo GetFileInfo(this string value) => value.IsFile() ? new FileInfo(value) : throw new ArgumentException("The given path does not reference an existing file path.");
 		
-
 	}
 }
