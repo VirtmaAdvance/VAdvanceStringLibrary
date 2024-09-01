@@ -108,6 +108,31 @@ namespace VAdvanceStringLibrary
 		public static explicit operator VString(string value) => new(value);
 		/// <inheritdoc cref="VString(string)"/>
 		public static explicit operator VString(char value) => new(value);
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(byte value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(sbyte value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(int value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(uint value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(ushort value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(short value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(ulong value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(long value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(double value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(decimal value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(float value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(bool value) => new(value ? "TRUE" : "FALSE");
+
 		/// <summary>
 		/// Determines if the <see cref="Value"/> contains the <paramref name="substringValue"/>.
 		/// </summary>
