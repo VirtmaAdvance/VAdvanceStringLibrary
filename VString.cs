@@ -185,7 +185,7 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public int CompareTo(VString? other)
 		{
-			other??=new VString("");
+			other??=new VString();
 			return Value.CompareTo(other?.Value);
 		}
 		/// <summary>
