@@ -132,6 +132,8 @@ namespace VAdvanceStringLibrary
 		public static explicit operator VString(float value) => new(value.ToString());
 		/// <inheritdoc cref="VString(string)"/>
 		public static explicit operator VString(bool value) => new(value ? "TRUE" : "FALSE");
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(System.Net.NetworkInformation.NetworkInterface value) => new(value.Name);
 
 		/// <summary>
 		/// Determines if the <see cref="Value"/> contains the <paramref name="substringValue"/>.
