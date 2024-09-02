@@ -136,6 +136,8 @@ namespace VAdvanceStringLibrary
 		public static explicit operator VString(System.Net.NetworkInformation.NetworkInterface value) => new(value.Name);
 		/// <inheritdoc cref="VString(string)"/>
 		public static explicit operator VString(System.Net.IPAddress value) => new(value.ToString());
+		/// <inheritdoc cref="VString(string)"/>
+		public static explicit operator VString(DateTime value) => new(value.ToString("MM-dd-yyyy | HH:mm:ss tt"));
 
 		/// <summary>
 		/// Determines if the <see cref="Value"/> contains the <paramref name="substringValue"/>.
