@@ -18,6 +18,7 @@ namespace VAdvanceStringLibrary.Services.Security
 			{
 
 			}
+			throw new NotImplementedException();
 		}
 
 	}

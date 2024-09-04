@@ -146,6 +146,17 @@ namespace VAdvanceStringLibrary
 		/// <returns></returns>
 		public bool Contains(string substringValue) => Value.Contains(substringValue);
 		/// <summary>
+		/// Get sthe number of characters within the string value.
+		/// </summary>
+		/// <returns>an <see cref="int"/> representation of the number of characters in the string value.</returns>
+		public int Count() => Length;
+		/// <summary>
+		/// Gets the number of instances the given <paramref name="needles"/> were found within the string value.
+		/// </summary>
+		/// <param name="needles">The <see cref="string"/> values representing the substrings to find within this <see cref="string"/> value.</param>
+		/// <returns>an <see cref="int"/> representation of the <paramref name="needles"/> found.</returns>
+		public int Count(string needles) => Value.Count(needles);
+		/// <summary>
 		/// Appends the <paramref name="value"/>.
 		/// </summary>
 		/// <param name="value"></param>
