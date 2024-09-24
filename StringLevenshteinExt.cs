@@ -54,10 +54,7 @@ namespace VAdvanceStringLibrary
 		/// <param name="first_value"></param>
 		/// <param name="second_value"></param>
 		/// <returns>a <see cref="int">value</see> representing the difference between the two string values.</returns>
-		private static int GetValueLengthDifference(string first_value, string second_value)
-		{
-			return first_value.Length>second_value.Length ? first_value.Length-second_value.Length : second_value.Length-first_value.Length;
-		}
+		private static int GetValueLengthDifference(string first_value, string second_value) => first_value.Length>second_value.Length ? first_value.Length-second_value.Length : second_value.Length-first_value.Length;
 		/// <summary>
 		/// Gets all indexes where the two string values do not match.
 		/// </summary>
