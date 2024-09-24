@@ -24,18 +24,12 @@ namespace VAdvanceStringLibrary
 			value.CreateFile(Array.Empty<byte>());
 		}
 		/// <inheritdoc cref="CreateFile(string, byte[])"/>
-		public static void CreateFile(this string value, string content)
-		{
-			value.CreateFile(content, Encoding.Unicode);
-		}
+		public static void CreateFile(this string value, string content) => value.CreateFile(content, Encoding.Unicode);
 		/// <inheritdoc cref="CreateFile(string, byte[])"/>
 		/// <param name="value">The file path to create.</param>
 		/// <param name="content">The content to apply.</param>
 		/// <param name="encoder">The encoding method.</param>
-		public static void CreateFile(this string value, string content, Encoding encoder)
-		{
-			value.CreateFile(encoder.GetBytes(content));
-		}
+		public static void CreateFile(this string value, string content, Encoding encoder) => value.CreateFile(encoder.GetBytes(content));
 		/// <summary>
 		/// Creates a new file.
 		/// </summary>

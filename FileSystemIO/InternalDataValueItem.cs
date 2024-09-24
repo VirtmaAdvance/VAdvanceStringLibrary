@@ -7,7 +7,7 @@
 	{
 
 		/// <summary>
-		/// The simplified value of the <see cref="ByteValue"/>.
+		/// The simplified value of the <see cref="DataValue"/>.
 		/// </summary>
 		public readonly double Value;
 		/// <summary>

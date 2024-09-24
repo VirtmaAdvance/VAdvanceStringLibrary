@@ -22,8 +22,7 @@ namespace VAdvanceStringLibrary
 			if(value.IsValid(str))
 			{
 				int res=str[0]!=value[0] ? 1 : 0;
-				res=Prv_LevenshteinIteration(str, value, replacement_cost, insertion_cost, deletion_cost, res);
-				return res+(deletion_cost*GetValueLengthDifference(str, value));
+				return Prv_LevenshteinIteration(str, value, replacement_cost, insertion_cost, deletion_cost, res) + (deletion_cost*GetValueLengthDifference(str, value));
 			}
 			return -1;
 		}
